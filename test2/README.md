@@ -63,7 +63,7 @@ This will:
 ## Project Structure
 
 ```
-monefy-appium-tests/
+test2/
 ├── config/
 │   └── capabilities.ts       # Appium capabilities configuration
 ├── pages/                    # Page Object Model classes
