@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"petstore-api-tests/models"
+	"test3/models"
 	"time"
 )
 

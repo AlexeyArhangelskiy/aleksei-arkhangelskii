@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"testing"
 
-	"petstore-api-tests/api"
-	"petstore-api-tests/utils"
+	"test3/api"
+	"test3/utils"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

@@ -22,7 +22,7 @@ A Go test framework for thee [Swagger Petstore API](https://petstore.swagger.io/
 ## Project Structure
 
 ```bash
-petstore-api-tests/
+test3/
 ├── api/            # API Client implementation with methods for each endpoint
 ├── models/         # Go structs representing API resources (Pet, etc.)
 ├── tests/          # Test suites (Positive, Negative)
@@ -42,7 +42,7 @@ petstore-api-tests/
 1. Clone the repository:
    ```bash
    git clone <repository_url>
-   cd petstore-api-tests
+   cd test3
    ```
 
 2. Install dependencies:

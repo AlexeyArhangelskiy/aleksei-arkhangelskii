@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"petstore-api-tests/models"
+	"test3/models"
 )
 
 func CreateRandomPet() *models.Pet {
