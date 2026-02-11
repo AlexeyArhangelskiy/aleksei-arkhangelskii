@@ -1,7 +1,7 @@
 # Exploratory Testing Report
 
 ## Application Overview
-Monefy is a mobile personal finance application that allows users to track income and expenses, manage categories and accounts, view balance over time, and upgrade from a free version to a paid version via in-app purchase.
+Monefy is a personal finance application that allows users to track income and expenses, manage categories and accounts, view balance over time, and upgrade from a free version to a paid version via in-app purchase.
 
 This testing session was performed on the free version of the application.
 
@@ -15,12 +15,12 @@ This testing session was performed on the free version of the application.
 - App Version: 1.10.4  
 - App Type: Free version  
 - Testing Duration: 60 minutes  
-- Testing Type: Exploratory, risk-based  
+- Testing Type: Exploratory
 
 ---
 
 ## Testing Approach
-The session was time-boxed and focused on exploratory testing using risk-based charters.
+The session was time-boxed and focused on exploratory testing.
 
 Priority was given to:
 - Core financial logic
@@ -73,7 +73,7 @@ Validate correctness and consistency of balance calculation across the applicati
 Explore income creation and validation of required data.
 
 **Scope:**  
-- “+” button  
+- Income “+” button   
 - Category selection  
 - Amount input via calculator  
 - Mandatory category selection  
@@ -92,7 +92,7 @@ Explore income creation and validation of required data.
 Explore expense creation and validation of required data.
 
 **Scope:**  
-- “–” button  
+- Expense “–” button   
 - Category selection  
 - Amount input via calculator  
 - Mandatory category selection  
@@ -174,7 +174,7 @@ Validate lifecycle management of categories and accounts.
 ## Bugs Found
 
 ### Bug 1: Application crash caused by negative amount overflow
-**Severity:** Critical  
+**Severity:** High  
 **Suggested Priority:** High  
 
 **Description:**  
@@ -192,7 +192,7 @@ By entering a negative value using the subtraction functionality, it is possible
 
 ### Bug 2: Free users can delete all categories and become blocked
 **Severity:** High  
-**Suggested Priority:** High  
+**Suggested Priority:** Medium  
 
 **Description:**  
 In the free version, users cannot create new categories (paid feature), but they can delete all existing categories. After deleting all categories, the user is left without any categories and cannot add new transactions unless they upgrade to the paid version.
@@ -207,17 +207,17 @@ In the free version, users cannot create new categories (paid feature), but they
 
 ---
 
-### Bug 3: All categories can be renamed to the same name
+### Bug 3: Deleting a category removes all related transactions
 **Severity:** Medium  
 **Suggested Priority:** Medium  
 
 **Description:**  
-The application allows renaming all categories to identical names without any validation.
+Deleting a category also removes all associated income and expense records without any explicit warning to the user.
 
 **Impact:**  
-- Confusing transaction history  
-- Reduced data clarity and readability  
-
+- Irreversible data loss  
+- Loss of historical financial information  
+- Critical trust issue for a finance application 
 
 ---
 
@@ -258,21 +258,19 @@ The note field allows unrestricted input without any length or format limitation
 
 ---
 
-### 3. Deleting a category removes all related transactions
-**Severity:** High  
+### 3. Renaming all categories to the same name
+**Severity:** Medium  
 
 **Observation:**  
-Deleting a category also removes all related income and expense records without a clear warning to the user.
+The application allows renaming all categories to identical names without any validation.
 
 **Risks:**  
-- Irreversible data loss  
-- Loss of historical financial information  
-- Critical trust issue for a finance application  
+- Confusing transaction history  
+- Reduced data clarity and readability  
 
 **Questions:**  
-- Is this behavior intentional?  
-- Should transactions be reassigned to another category instead?  
-- Should the user be explicitly warned before deletion?  
+- Should the app prevent duplicate category names?  
+- How should renaming be validated for better user clarity?  
 
 ---
 

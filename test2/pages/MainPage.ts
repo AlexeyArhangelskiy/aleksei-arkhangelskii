@@ -160,7 +160,6 @@ class MainPage {
     async getBalanceAmountValue(): Promise<number> {
         await this.balanceAmount.waitForDisplayed({ timeout: 5000 });
         const text = await this.balanceAmount.getText();
-        // Remove non-numeric characters except dot and minus
         return parseFloat(text.replace(/[^0-9.-]/g, ''));
     }
 

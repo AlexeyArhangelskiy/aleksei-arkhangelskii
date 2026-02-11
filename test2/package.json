@@ -8,8 +8,7 @@
   },
   "scripts": {
     "test": "wdio run wdio.conf.ts",
-    "report": "allure generate allure-results --clean && allure open",
-    "mcp": "mcp-appium"
+    "report": "allure generate allure-results --clean && allure open"
   },
   "keywords": [],
   "author": "",

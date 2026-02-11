@@ -7,7 +7,7 @@ Automated E2E testing for the Monefy Android app using Appium, WebdriverIO, and 
 - **Node.js**: v18+ (v20 recommended)  
 - **Android SDK**: Installed and configured  
 - **Android Emulator**: Running  
-- **Monefy App**: Installed on emulator. Downloadable from [Android](https://play.google.com/store/apps/details?id=com.monefy.app.lite)  
+- **Monefy App**: Installed on emulator. Download [Android](https://play.google.com/store/apps/details?id=com.monefy.app.lite)  
 
 > **Note:** The emulator must have the Monefy app installed prior to running tests.
 
@@ -49,7 +49,7 @@ adb devices
 npm test
 ```
 
-Note
+> **Note:**
 1.Tests run sequentially during local execution.
 2.Each test is isolated and independent; the order of execution does not affect results.
 
@@ -58,7 +58,6 @@ This will:
 2. Connect to the Android emulator
 3. Launch the Monefy app
 4. Run the test suite
-5. Generate Allure reports
 
 ## Project Structure
 
@@ -82,29 +81,11 @@ test2/
 └── package.json              # Dependencies and scripts
 ```
 
-## Test Configuration
-
-### Capabilities (`wdio.conf.ts`)
-
-```typescript
-capabilities: [{
-    platformName: 'Android',
-    'appium:automationName': 'UiAutomator2',
-    'appium:deviceName': 'Android Emulator',
-    'appium:appPackage': 'com.monefy.app.lite',
-    'appium:appActivity': 'com.monefy.activities.main.MainActivity_',
-    'appium:autoGrantPermissions': true,
-    'appium:noReset': false,
-    'appium:fullReset': false,
-    'appium:appWaitActivity': '*'
-}]
-```
-
 ## Current Tests
 
 ### 1. Subscription (`subscription.e2e.ts`)
 - Verifies the onboarding flow  
-- Checks the subscription/ad screen and the ability to purchase a subscription  
+- Checks the subscription screen and the ability to purchase a subscription  
 - Ensures user can reach the main screen after the flow
 
 ### 2. Add Expense (`addExpense.e2e.ts`)
@@ -119,11 +100,9 @@ capabilities: [{
 
 ## Reporting
 
-Test results are available in:
-- **Console**: Spec reporter output
-- **Allure Reports**: `allure-results/` directory
+The generated .mhtml report page after running tests is available in the ```/allure-report``` directory.
 
-To view Allure reports:
+To generate a new report you need to run the tests and then use following command:
 ```bash
 npm run report
 ```
@@ -137,10 +116,6 @@ npm run report
 ### Appium connection errors
 - Check Appium is not already running on port 4723
 - WebdriverIO starts Appium automatically via the service
-
-### Node version issues
-- Verify Node v20 is active: `node -v`
-- Switch to Node v20: `nvm use 20`
 
 ### Stuck Appium Process
 If you see errors like `EADDRINUSE: address already in use 127.0.0.1:4723`, it means an Appium server instance is already running and blocking the port.

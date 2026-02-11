@@ -1,0 +1,33 @@
+?   	petstore-api-tests/api	[no test files]
+?   	petstore-api-tests/models	[no test files]
+=== RUN   TestCreatePet
+=== PAUSE TestCreatePet
+=== RUN   TestGetPet
+=== PAUSE TestGetPet
+=== RUN   TestUpdatePet
+=== PAUSE TestUpdatePet
+=== RUN   TestDeletePet
+=== PAUSE TestDeletePet
+=== RUN   TestGetPet_NotFound
+=== PAUSE TestGetPet_NotFound
+=== RUN   TestDeletePet_NotFound
+=== PAUSE TestDeletePet_NotFound
+=== RUN   TestGetPet_NegativeID
+=== PAUSE TestGetPet_NegativeID
+=== CONT  TestCreatePet
+=== CONT  TestGetPet_NotFound
+=== CONT  TestUpdatePet
+=== CONT  TestDeletePet
+=== CONT  TestGetPet
+=== CONT  TestGetPet_NegativeID
+=== CONT  TestDeletePet_NotFound
+--- PASS: TestDeletePet_NotFound (0.51s)
+--- PASS: TestGetPet_NegativeID (0.51s)
+--- PASS: TestGetPet_NotFound (0.62s)
+--- PASS: TestCreatePet (0.63s)
+--- PASS: TestGetPet (0.73s)
+--- PASS: TestDeletePet (0.74s)
+--- PASS: TestUpdatePet (0.96s)
+PASS
+ok  	petstore-api-tests/tests	(cached)
+?   	petstore-api-tests/utils	[no test files]
